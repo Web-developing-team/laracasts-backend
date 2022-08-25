@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\LoginRequest;
-use App\Http\Requests\Admin\RegisterRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\Admin\AdminResource;
 
 
 class AuthController extends Controller
@@ -21,6 +21,7 @@ class AuthController extends Controller
 
             return response()->json([
                 'message' => __('messages.response.ok'),
+                'admin' => new AdminResource($admin),
                 'token' => $token->plainTextToken,
                 'token_type' => 'Bearer'
             ], 200);
@@ -29,20 +30,6 @@ class AuthController extends Controller
         return response()->json([
             'message' => __('validation.login.fail'),
         ], 422);
-    }
-
-    public function register(RegisterRequest $request)
-    {
-        $admin = Admin::create($request->validated());
-
-        $token = $admin->createToken('admin_token');
-
-        return response()->json([
-            'message' => __('messages.response.ok'),
-            'admin' => new AdminResource($admin),
-            'token' => $token->plainTextToken,
-            'token_type' => 'Bearer'
-        ], 201);
     }
 
     public function check()
