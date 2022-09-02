@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Admin;
 
 class AdminSeeder extends Seeder
 {
@@ -14,6 +15,12 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        Admin::factory()->count(1000000)->create();
+        Admin::firstOrCreate([
+            'username' => 'super_admin',
+            'password' => 'password',
+            'email' => 'admin@admin.com'
+        ]);
+
+        Admin::factory()->count(10000)->create();
     }
 }
