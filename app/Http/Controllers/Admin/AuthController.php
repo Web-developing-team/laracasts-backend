@@ -15,7 +15,7 @@ class AuthController extends Controller
     {
         if(Auth::guard('admin')->attempt($request->validated()))
         {
-            $admin = Auth::user();
+            $admin = Auth::guard('admin')->user();
 
             $token = $admin->createToken('admin_token');
 
