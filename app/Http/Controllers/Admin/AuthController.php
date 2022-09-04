@@ -21,6 +21,7 @@ class AuthController extends Controller
 
             return response()->json([
                 'message' => __('messages.response.ok'),
+                'user' => $admin,
                 'token' => $token->plainTextToken,
                 'token_type' => 'Bearer'
             ], 200);
