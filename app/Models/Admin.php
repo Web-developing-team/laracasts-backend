@@ -47,4 +47,10 @@ class Admin extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($value);
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
 }
