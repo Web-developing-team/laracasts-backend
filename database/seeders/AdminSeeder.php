@@ -15,12 +15,16 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        Admin::firstOrCreate([
-            'username' => 'super_admin',
-            'password' => 'password',
-            'email' => 'admin@admin.com'
-        ]);
+        Admin::firstOrCreate(
+            [
+                'username' => 'super_admin',
+            ],
+            [
+                'password' => 'password',
+                'email' => 'super@admin.com',
+            ]
+        );
 
-        Admin::factory()->count(10000)->create();
+        Admin::factory()->count(1000)->create();
     }
 }
