@@ -25,6 +25,6 @@ class AdminSeeder extends Seeder
             ]
         );
 
-        Admin::factory()->count(1000)->create();
+        Admin::factory()->count(100)->create();
     }
 }
