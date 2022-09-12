@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\Role;
-use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class RolePolicy
@@ -11,83 +11,83 @@ class RolePolicy
     use HandlesAuthorization;
 
     /**
-     * Determine whether the user can view any models.
+     * Determine whether the admin can view any models.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function viewAny(User $user)
+    public function viewAny(Admin $admin)
     {
         //
     }
 
     /**
-     * Determine whether the user can view the model.
+     * Determine whether the admin can view the model.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $admin
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Role $role)
+    public function view(Admin $admin, Role $role)
     {
         //
     }
 
     /**
-     * Determine whether the user can create models.
+     * Determine whether the admin can create models.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function create(User $user)
+    public function create(Admin $admin)
     {
         //
     }
 
     /**
-     * Determine whether the user can update the model.
+     * Determine whether the admin can update the model.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $admin
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Role $role)
+    public function update(Admin $admin, Role $role)
     {
         //
     }
 
     /**
-     * Determine whether the user can delete the model.
+     * Determine whether the admin can delete the model.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $admin
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Role $role)
+    public function delete(Admin $admin, Role $role)
     {
         //
     }
 
     /**
-     * Determine whether the user can restore the model.
+     * Determine whether the admin can restore the model.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $admin
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Role $role)
+    public function restore(Admin $admin, Role $role)
     {
         //
     }
 
     /**
-     * Determine whether the user can permanently delete the model.
+     * Determine whether the admin can permanently delete the model.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Admin  $admin
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Role $role)
+    public function forceDelete(Admin $admin, Role $role)
     {
         //
     }
