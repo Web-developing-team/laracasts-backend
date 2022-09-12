@@ -4,18 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\ModelTrait;
+use App\Traits\PermissionTrait;
 
 class Role extends Model
 {
-    use HasFactory;
+    use HasFactory, ModelTrait, PermissionTrait;
 
     protected $fillable = [ 'name' ];
 
-    /**
-     * Get permissions of role.
-     */
-    public function permissions()
-    {
-        return $this->hasMany(Permission::class);
-    }
 }
