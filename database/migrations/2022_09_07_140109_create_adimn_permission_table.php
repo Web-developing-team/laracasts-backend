@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('adimn_permission', function (Blueprint $table) {
+        Schema::create('admin_permission', function (Blueprint $table) {
             $table->id();
             $table->integer('admin_id');
             $table->integer('permission_id');
