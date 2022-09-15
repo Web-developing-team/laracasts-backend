@@ -6,7 +6,7 @@ use App\Models\Role;
 use App\Models\Admin;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class RolePolicy
+class RolePolicy extends Policy
 {
     use HandlesAuthorization;
 
@@ -18,7 +18,7 @@ class RolePolicy
      */
     public function viewAny(Admin $admin)
     {
-        //
+        return $this->check_permission($admin, 'view-any-role');
     }
 
     /**
@@ -28,9 +28,9 @@ class RolePolicy
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(Admin $admin, Role $role)
+    public function view(Admin $admin)
     {
-        //
+        return $this->check_permission($admin, 'view-role');
     }
 
     /**
@@ -41,7 +41,7 @@ class RolePolicy
      */
     public function create(Admin $admin)
     {
-        //
+        return $this->check_permission($admin, 'create-role');
     }
 
     /**
@@ -51,9 +51,9 @@ class RolePolicy
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(Admin $admin, Role $role)
+    public function update(Admin $admin)
     {
-        //
+        return $this->check_permission($admin, 'update-role');
     }
 
     /**
@@ -63,9 +63,9 @@ class RolePolicy
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(Admin $admin, Role $role)
+    public function delete(Admin $admin)
     {
-        //
+        return $this->check_permission($admin, 'delete-role');
     }
 
     /**
@@ -75,7 +75,7 @@ class RolePolicy
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(Admin $admin, Role $role)
+    public function restore(Admin $admin)
     {
         //
     }
@@ -87,7 +87,7 @@ class RolePolicy
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(Admin $admin, Role $role)
+    public function forceDelete(Admin $admin)
     {
         //
     }
