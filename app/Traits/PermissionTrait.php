@@ -8,8 +8,7 @@ trait PermissionTrait
 {
 
     /**
-     * Get permissions of model => user or admin .
-     *
+     * Get permissions of role.
      */
     public function permissions()
     {
